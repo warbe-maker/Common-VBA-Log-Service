@@ -1,4 +1,5 @@
-## VBA-Log-Service
+## Common VBA Log Service
+### Usage at a glance
 The below provides a first impression of the Class-Module's methods and properties
 ```vb
     Dim Log As New clsLog
