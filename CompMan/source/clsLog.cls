@@ -52,7 +52,7 @@ Option Base 1 ' ensures the index conforms with the column number
 ' - FileFullName r/w Specifies the full name of the log-file. The location defaults
 '                    to the ActiveWorkbook's parent folder, the name defaults to the
 '                    ActiveWorkbook's BaseName with a .log file extention.
-' - FileName       w Specifies the log-file's name, defaults to the ActiveWorkbook's
+' - FileBaseName       w Specifies the log-file's name, defaults to the ActiveWorkbook's
 '                    BaseName with a .log file extention.
 ' - KeepLogs       w Specifies the number of logs, i.e. a set of log entries, is
 '                    kept when the log file is reorganized.
@@ -82,10 +82,11 @@ Private lColumns                As Long
 Private lKeepLogs               As Long
 Private sColsDelimiter          As String
 Private sColsMargin             As String
+Private sFileExtension          As String
+Private sFileBaseName           As String
 Private sFileFullName           As String
-Private sFileName               As String
+Private sFileLocation           As String
 Private sLastSpec               As String ' Entry, Title, Header, else
-Private sPath                   As String
 Private sTitleAlign             As String
 Private sTitleFill              As String
 
@@ -128,7 +129,13 @@ Private Sub Class_Initialize()
     bWithTimeStamp = False
     bNewLog = True
     lBase = ArrayBase
-    
+    ColsDelmiter = " "
+    '~~ Log file name defaults
+    sFileBaseName = FSo.GetBaseName(ActiveWorkbook.FullName)
+    sFileExtension = "log"
+    sFileLocation = ActiveWorkbook.Path
+    sFileFullName = FileFullName
+
 End Sub
 
 Private Sub Class_Terminate()
@@ -410,37 +417,40 @@ Public Property Let ColWidth(Optional ByVal c_col As Long, _
     
 End Property
 
-Friend Property Get FileFullName() As String:   FileFullName = sFileFullName:   End Property
+Friend Property Get FileExtension() As String:          FileExtension = sFileExtension: End Property
+
+Friend Property Let FileExtension(ByVal s As String):   sFileExtension = s:             End Property
+
+Friend Property Get FileFullName() As String
+    FileFullName = sFileLocation & "\" & sFileBaseName & "." & sFileExtension
+    FileFullName = Replace(FileFullName, "\\", "\")
+    FileFullName = Replace(FileFullName, "..", ".")
+End Property
 
 Friend Property Let FileFullName(ByVal s As String)
 ' ----------------------------------------------------------------------------
 ' Specifies the log file's name and location, by the way maintaining the Path
-' and the FileName property.
+' and the FileBaseName property.
 ' ----------------------------------------------------------------------------
     
     With FSo
-        If sFileFullName <> s Then
+        If s <> FileFullName Then
             '~~ The log file's name is not/no longer the one previously used
-            If .FileExists(sFileFullName) Then .DeleteFile sFileFullName
+            If .FileExists(FileFullName) Then .DeleteFile FileFullName
         End If
-        sFileFullName = s
-        sPath = .GetParentFolderName(s)
-        sFileName = .GetFileName(s)
+        sFileExtension = .GetExtensionName(s)
+        sFileLocation = .GetParentFolderName(s)
+        sFileBaseName = .GetBaseName(s)
     End With
-
+    sFileFullName = s
+    
 End Property
 
-Friend Property Get FileName() As String:       FileName = sFileName:           End Property
+Friend Property Get FileBaseName() As String:           FileBaseName = sFileBaseName:   End Property
 
-Friend Property Let FileName(ByVal s As String)
-    If FSo.GetExtensionName(s) = vbNullString Then
-        s = s & ".log"
-    End If
-    sFileName = s
-    sFileFullName = Replace(sPath & "\" & sFileName, "\\", "\")
-End Property
+Friend Property Let FileBaseName(ByVal s As String):    sFileBaseName = s:              End Property
 
-Friend Property Let KeepLogs(ByVal l As Long):  lKeepLogs = l:  End Property
+Friend Property Let KeepLogs(ByVal l As Long):          lKeepLogs = l:                  End Property
 
 Friend Property Let Path(ByVal v As Variant)
 ' -----------------------------------------------------------------------------------
@@ -453,14 +463,14 @@ Friend Property Let Path(ByVal v As Variant)
     
     Select Case VarType(v)
         Case VarType(v) = vbString
-            sPath = v
+            sFileLocation = v
         Case VarType(v) = vbObject
             If TypeOf v Is Workbook Then
                 Set wbk = v
-                sPath = wbk.Path
+                sFileLocation = wbk.Path
             ElseIf TypeOf v Is Folder Then
                 Set fld = v
-                sPath = fld.Path
+                sFileLocation = fld.Path
             Else
                 Err.Raise AppErr(1), ErrSrc(PROC), "The provided argument is neither a string specifying a " & _
                                                    "folder's path, nor a Workbook object, nor a Folder object!"
@@ -1727,7 +1737,7 @@ Public Function StringAsArray(ByVal s_strng As String, _
 ' "L" the items in the array are returned trimmed accordingly.
 ' Example 1: arr = StringAsArray("this is a string", " ") is returned as an
 '            array with 3 items: "this", "is", "a", "string".
-' Example 2: arr = StringAsArray(FileAsString(FileName),sSplit,False) is
+' Example 2: arr = StringAsArray(FileAsString(FileBaseName),sSplit,False) is
 '            returned as any array with records/lines of the provided file,
 '            whereby the lines are not trimmed, i.e. leading spaces are
 '            preserved.
@@ -2024,7 +2034,7 @@ Private Sub WriteLines(ByVal w_lines As String)
     
     a = Split(w_lines, vbCrLf)
     s = Join(a, vbCrLf & TimeStamp)
-    StringAsFile TimeStamp & s, sFileFullName, True
+    StringAsFile TimeStamp & s, FileFullName, True
     
 End Sub
 

@@ -514,6 +514,13 @@ Friend Property Get Result() As Variant
 
 End Property
 
+Private Function ErrorMsgMissingVerification() As String
+    ErrorMsgMissingVerification = "For the test " & sTestNumber & " neither a Verification nor a TestHeadLine had been specified!" & "||" & _
+                                  "Within/for an individual test number a dedicated "".Verification"", " & _
+                                  "specifying the quality/extent of the expected test result, is mandatory for each pair of .ResultExpected/.Result " & _
+                                  "statements. However, when no Verification had been specified a specified TestHeadLine is used instead."
+End Function
+
 Friend Property Let Result(ByVal r_var As Variant)
 ' ------------------------------------------------------------------------------
 ' Register in dctResult a new test result. When the corresponding expected
@@ -521,10 +528,12 @@ Friend Property Let Result(ByVal r_var As Variant)
 ' ------------------------------------------------------------------------------
     Const PROC = "Result-Let"
         
-    If sVerification = vbNullString _
-    Then Err.Raise AppErr(1), ErrSrc(PROC), "Verification missing!" & vbLf & _
-                                            "Each .Result/.ResultExpected requires a dedicated ""Verification"" " & _
-                                            "string specifying the quality/extent of the expected test result."
+    Select Case True
+        Case sVerification = vbNullString And sTestHeadLine = vbNullString
+            Err.Raise AppErr(1), ErrSrc(PROC), ErrorMsgMissingVerification
+        Case sVerification = vbNullString And sTestHeadLine <> vbNullString
+            sVerification = sTestHeadLine
+    End Select
     With dctResult
         If .Exists(TestId) Then .Remove TestId
         .Add TestId, r_var
@@ -555,10 +564,12 @@ Friend Property Let ResultExpected(ByVal r_var As Variant)
 ' ------------------------------------------------------------------------------
     Const PROC = "ResultExpected-Let"
     
-    If sVerification = vbNullString _
-    Then Err.Raise AppErr(1), ErrSrc(PROC), "Verification missing!" & vbLf & _
-                                            "Each .Result/.ResultExpected requires a dedicated ""Verification"" " & _
-                                            "string specifying the quality/extent of the expected test result."
+    Select Case True
+        Case sVerification = vbNullString And sTestHeadLine = vbNullString
+            Err.Raise AppErr(1), ErrSrc(PROC), ErrorMsgMissingVerification
+        Case sVerification = vbNullString And sTestHeadLine <> vbNullString
+            sVerification = sTestHeadLine
+    End Select
     
     With dctResultExpected
         If .Exists(TestId) Then .Remove TestId
@@ -646,31 +657,6 @@ Friend Property Get TestHeadLine() As String:                   TestHeadLine = s
 Friend Property Let TestHeadLine(ByVal s As String):            sTestHeadLine = s:                          End Property
 
 Friend Property Let TestHeadLineRegression(ByVal s As String):  sTestHeadLineRegression = s:                End Property
-
-'Friend Property Get TempTestItem(Optional ByVal t_test_no As String = vbNullString) As Variant
-'' ------------------------------------------------------------------------------
-'' - When a test-number (t_test_no) is provided the full default name of an
-''   existing test file is returned. When no file with such a test number exists
-''   an error is raised.
-'' - When no test-number is provided, the name of the last provided test file
-''   (vTempTestItem) is returned.
-'' ------------------------------------------------------------------------------
-'     Const PROC = "TempTestItem-Get"
-'
-'     Dim s As String
-'
-'     If t_test_no = vbNullString Then
-'        If vTempTestItem = vbNullString _
-'        Then TempTestItem = TempFile(sTestFolder) _
-'        Else TempTestItem = vTempTestItem
-'    Else
-'        s = TestItemName(t_test_no)
-'        If FSo.FileExists(s) _
-'        Then TempTestItem = FSo.GetFile(s).Path _
-'        Else Err.Raise AppErr(1), ErrSrc(PROC), "A test-file for the given test-number does not exist in the test folder (" & sTestFolder & ")!"
-'    End If
-'
-'End Property
 
 Friend Property Get TestNumber() As String
 ' ------------------------------------------------------------------------------

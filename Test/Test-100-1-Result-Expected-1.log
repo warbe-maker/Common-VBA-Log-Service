@@ -1,8 +1,8 @@
-24-10-14-20:11:57 01-1 Title test:                                                            
-24-10-14-20:11:57 - 4 title lines as ParamAray (lines are comma delimited string)             
-24-10-14-20:11:57 - 2 Single line log entries                                                 
-24-10-14-20:11:57 - Title left adjusted by means of a trailing space with the first title line
-24-10-14-20:11:57 ----------------------------------------------------------------------------
-24-10-14-20:11:57 01-1 1. Single string, new log, Single string, new log.
-24-10-14-20:12:01 ==========================================
-24-10-14-20:12:01 01-1 2. Single string, new log, no title. 
+24-11-09-20:31:18 01-1 Title test:                                                            
+24-11-09-20:31:18 - 4 title lines as ParamAray (lines are comma delimited string)             
+24-11-09-20:31:18 - 2 Single line log entries                                                 
+24-11-09-20:31:18 - Title left adjusted by means of a trailing space with the first title line
+24-11-09-20:31:18 ----------------------------------------------------------------------------
+24-11-09-20:31:18 01-1 1. Single string, new log, Single string, new log.
+24-11-09-20:31:18 ==========================================
+24-11-09-20:31:18 01-1 2. Single string, new log, no title. 

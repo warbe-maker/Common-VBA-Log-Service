@@ -48,9 +48,11 @@ Notes:
 ### Properties
 | Name          | Description |
 |---------------|-------------|
-|`ColsDelimiter`| Write only, string expression, defaults to a vertical bar (\|) when `Headers` are specified, defaults to a single space otherwise. |
-|`FileFullName` | Read/Write, string expression, specifies the full name of the log-file defaults to a file named like the `ActiveWorkbook`[^1] with an `.log` extension |
-|`FileName`     | String expression, write only, specifies the log-file's name, defaults to the  `ActiveWorkbook's` [^1] `BaseName` with an `.log` file extension. |
+|`ColsDelimiter`| String expression, read/write, defaults to a single space. <br>Read: returns the current specified `ColsDelimiter`.<br>Write: specifies one. When `|` (vertical bar) is specified, the alignment margin defaults to a single space, when a single space is specified the alignment margin defaults to a vbNullString.|
+|`FileBaseName` | String expression, write only, specifies the log-file's name, defaults to the  `ActiveWorkbook's` [^1] `BaseName` with an `.log` file extension. |
+|`FileExtension`| String expression, read/write, specifies the log-file's file extension, defaults to `log`|
+|`FileFullName` | String expression, read/write, write: specifies the full name of the log-file, replaces any defaults (location, base-name, extension; read: returns the joint `FileLocation\FileBaseName.FileExtension`.|
+|`FileLocation` | String expression, read/write, specifies the log-files location, defaults to the `ActiveWorkbook.Path`.|
 |`KeepDays`     | Integer expression, write only, defaults to 1 when not provided, specifies the number of log-days which are kept in the log-file.<br><u>Example:</u> When a log-file is written once a week and  `KeepDays = 2` the log-file will never contain log entries of more than the last two weeks. |
 |`LogFile`      | File object representing the current active log-file. |
 |`Path`         | String expression, write only, specifies the log-file's location, defaults to the `ActiveWorkbook's` [^1] parent folder. |
