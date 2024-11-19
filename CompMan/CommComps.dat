@@ -16,7 +16,7 @@ DoneNamesHskpng_6=UsedExportFolder>
 
 [clsLog]
 KindOfComponent=hosted
-LastModAt=2024-11-09 20:52:37 (UTC)
+LastModAt=2024-11-11 16:49:42 (UTC)
 LastModBy=warbe
 LastModExpFileOrigin=E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\clsLog.cls
 LastModIn=E:\Sync\Excel VBA\DevAndTest\Log\Log.xlsb
@@ -24,7 +24,7 @@ LastModOn=THINKPAD-YOGA
 
 [clsTestAid]
 KindOfComponent=used
-LastModAt=2024-11-09 20:52:37 (UTC)
+LastModAt=2024-11-11 15:50:38 (UTC)
 LastModBy=warbe
 LastModExpFileOrigin=E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\clsTestAid.cls
 LastModIn=E:\Sync\Excel VBA\DevAndTest\Log\Log.xlsb
@@ -32,7 +32,7 @@ LastModOn=THINKPAD-YOGA
 
 [fMsg]
 KindOfComponent=used
-LastModAt=2024-11-09 20:52:37 (UTC)
+LastModAt=2024-11-11 16:49:43 (UTC)
 LastModBy=warbe
 LastModExpFileOrigin=E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\fMsg.frm
 LastModIn=E:\Sync\Excel VBA\DevAndTest\Log\Log.xlsb
@@ -40,7 +40,7 @@ LastModOn=THINKPAD-YOGA
 
 [mCompManClient]
 KindOfComponent=used
-LastModAt=2024-11-09 20:52:37 (UTC)
+LastModAt=2024-11-11 16:49:42 (UTC)
 LastModBy=warbe
 LastModExpFileOrigin=E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\mCompManClient.bas
 LastModIn=E:\Sync\Excel VBA\DevAndTest\Log\Log.xlsb
@@ -48,7 +48,7 @@ LastModOn=THINKPAD-YOGA
 
 [mErH]
 KindOfComponent=used
-LastModAt=2024-11-09 20:52:37 (UTC)
+LastModAt=2024-11-11 16:49:42 (UTC)
 LastModBy=warbe
 LastModExpFileOrigin=E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\mErH.bas
 LastModIn=E:\Sync\Excel VBA\DevAndTest\Log\Log.xlsb
@@ -56,7 +56,7 @@ LastModOn=THINKPAD-YOGA
 
 [mMsg]
 KindOfComponent=used
-LastModAt=2024-11-09 20:52:37 (UTC)
+LastModAt=2024-11-11 16:49:42 (UTC)
 LastModBy=warbe
 LastModExpFileOrigin=E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\mMsg.bas
 LastModIn=E:\Sync\Excel VBA\DevAndTest\Log\Log.xlsb
@@ -64,7 +64,7 @@ LastModOn=THINKPAD-YOGA
 
 [mTrc]
 KindOfComponent=used
-LastModAt=2024-11-09 20:52:37 (UTC)
+LastModAt=2024-11-11 15:50:37 (UTC)
 LastModBy=warbe
 LastModExpFileOrigin=E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\mTrc.bas
 LastModIn=E:\Sync\Excel VBA\DevAndTest\Log\Log.xlsb

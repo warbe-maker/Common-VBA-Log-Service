@@ -129,7 +129,7 @@ Private Sub Class_Initialize()
     bWithTimeStamp = False
     bNewLog = True
     lBase = ArrayBase
-    ColsDelmiter = " "
+    ColsDelimiter = " "
     '~~ Log file name defaults
     sFileBaseName = FSo.GetBaseName(ActiveWorkbook.FullName)
     sFileExtension = "log"

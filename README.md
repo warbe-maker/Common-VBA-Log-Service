@@ -36,6 +36,7 @@ Notes:
 |--------------------------|----------|
 |`AlignmentHeaders`    | ParamArray of string expressions, explicitly specifies the [alignment](#explicit-headers-alignment-specification) for each column's header.|
 |`AlignmentItems`      | ParamArray of string expressions, explicitly specifies the [alignment](#explicit-items-alignment-specification) for each column's item.|
+|`ColsItems`           | Writes items provided as ParamArray arranged in columns to the log file. See property `ColsSpecs` for how to specify corresponding columns alignment and width.|
 |`Dsply`               | Displays the log-file by means of the application associated with the file's extension, which defaults to .log|
 |`Entry`               | Writes a log entry which is either a single string or a number of items, whereby the latter indicated that the items are to be aligned in columns in accordance with the specified `AlignmentItems`.|
 |`Headers`             | ParamArray of string expressions, specifies a header line with column headers. The method may be repeated for multiple column headers. The specified headers may implicitly specify the column headers' [alignment](#implicit-headers-alignment-specification) |
@@ -49,17 +50,16 @@ Notes:
 | Name          | Description |
 |---------------|-------------|
 |`ColsDelimiter`| String expression, read/write, defaults to a single space. <br>Read: returns the current specified `ColsDelimiter`.<br>Write: specifies one. When `|` (vertical bar) is specified, the alignment margin defaults to a single space, when a single space is specified the alignment margin defaults to a vbNullString.|
+|`ColsSpecs`    | String expression, specifies each column's alignment (`L`eft, `C`entered, `R`ight, its width and its fill if any. Fill by default are spaces, alternatives are:<br>`"-"` dash<br>`" -"` space dash (starts with a space followed by dashes)<br>`"."` dot<br>`" ."` space dot<br>|
 |`FileBaseName` | String expression, write only, specifies the log-file's name, defaults to the  `ActiveWorkbook's` [^1] `BaseName` with an `.log` file extension. |
 |`FileExtension`| String expression, read/write, specifies the log-file's file extension, defaults to `log`|
 |`FileFullName` | String expression, read/write, write: specifies the full name of the log-file, replaces any defaults (location, base-name, extension; read: returns the joint `FileLocation\FileBaseName.FileExtension`.|
 |`FileLocation` | String expression, read/write, specifies the log-files location, defaults to the `ActiveWorkbook.Path`.|
-|`KeepDays`     | Integer expression, write only, defaults to 1 when not provided, specifies the number of log-days which are kept in the log-file.<br><u>Example:</u> When a log-file is written once a week and  `KeepDays = 2` the log-file will never contain log entries of more than the last two weeks. |
+|`KeepLogs`     | Integer expression, write only, defaults to 1 when not provided, specifies the number of logs (lines between delimiter lines) are kept in the log-file.<br><u>. |
 |`LogFile`      | File object representing the current active log-file. |
-|`Path`         | String expression, write only, specifies the log-file's location, defaults to the `ActiveWorkbook's` [^1] parent folder. |
 
 ### Installation
-1. Download (into a dedicated folder preferably) and open the 'development' Workbook [VBLogService.xlsb][1]
-2. In the VB-Editor copy (drag and drop) the `clsLog` Class-Module into your VB-Project. [^2]
+1. Download the [clsLog][1] Class-Module and import it into your VB-Project. [^2]
 
 ### Columns alignment specifics
 The alignment (explicit or implicit) of log items in columns - and optional column headers - is the main focus of the VBA-Log-Service whereby an explicit (`AlignmentHeaders`/`AlignmentItems`) specification takes precedence over an implicit (`Headers`/`Entry`) specification disregarding which method has been called first. I e. for example: When the `Headers` method implicitly specifies the alignment this alignment would be overwritten by a subsequent `AlignmentHeaders` specification.
@@ -173,4 +173,4 @@ Note that an implicit alignment spec is appropriate for the `Headers` specificat
  
 [^2]: The Workbook (its dedicated parent folder respectively) is dedicated to the Class-Module's development and test and provides a full regression test which compares the result of a series of test with a file containing the expected results.
 
-[1]: https://github.com/warbe-maker/VBA-Log-Service/blob/main/Log.xlsb?raw=true
+[1]: https://github.com/warbe-maker/VBA-Log-Service/blob/main/CompMan/source/clsLog.cls

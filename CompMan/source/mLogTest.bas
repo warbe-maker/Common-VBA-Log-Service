@@ -392,6 +392,46 @@ eh: Select Case ErrMsg(ErrSrc(PROC))
     End Select
 End Sub
 
+Private Sub Test_001_Guide()
+
+    Dim s1 As String
+    Dim s2 As String
+    Dim i  As Long
+    
+    If Not TestAid Is Nothing Then Set TestAid = Nothing
+    Set TestAid = New clsTestAid
+    
+    With TestAid
+        .TestId = "GuideTest-1"
+        .TestedComp = "clsTestAid"
+        .TestedProc = "Guide, GuideDone"
+        .Verification = "Basic functionality"
+        
+        .Guide "This test guidance message should appear at tthe top left position." & vbLf & _
+               "Move the message to any other porition and continue!"
+        Stop
+        
+        .Guide "This message should appear at the position the first one had been left."
+        Stop
+        
+        s1 = "Lorem ipsum sic transit ... "
+        For i = 1 To 50
+            s2 = s2 & s1
+        Next i
+        .Guide s2
+        Stop
+                
+        .GuideTerminate
+        
+        .Guide "This message should have poped up at the last position it had been displayed." & vbLf & vbLf & s2
+        Stop
+        
+    End With
+    
+    Set TestAid = Nothing
+    
+End Sub
+
 Private Sub Test_010_Align_Normal()
 
     Dim sResult As String
@@ -404,43 +444,43 @@ Private Sub Test_010_Align_Normal()
         .TestedType = "Function"
         
         ' =====================================================================
-        .TestNumber = "010-1"
+        .TestId = "010-1"
         .Verification = "Align left, margin= "" "" (ignored!), fill="" "" (final width = 10)"
         .Result = ">" & Log.Align("xx", "L", 10, " ", " ", False) & "<"
         .ResultExpected = ">xx        <"
         
         ' =====================================================================
-        .TestNumber = "010-2"
+        .TestId = "010-2"
         .Verification = "Align left, margin= "" "" (ignored!), fill="" "" (final width = 10)"
         .Result = ">" & Log.Align("xxxxxxxxxxxx", "L", 10, " ", " ", False) & "<"
         .ResultExpected = ">xxxxxxxxxx<"
         
         ' =====================================================================
-        .TestNumber = "010-3"
+        .TestId = "010-3"
         .Verification = "Align right, margin="" "" (ignored), fill="" "" (final length = 10)"
         .Result = ">" & Log.Align("x", "R", 10, " ", " ", False) & "<"
         .ResultExpected = ">         x<"
         
         ' =====================================================================
-        .TestNumber = "010-4"
+        .TestId = "010-4"
         .Verification = "Align centered, margin="""", fill=""-"" (final width is 10)"
         .Result = ">" & Log.Align("x", "C", 10, "-", "", False) & "<"
         .ResultExpected = ">----x-----<" ' final width is 12 (10 plus one - fill at the left and one at the right)
               
         ' =====================================================================
-        .TestNumber = "010-5"
+        .TestId = "010-5"
         .Verification = "Align centered, margin="""", fill="" -"" (final width is 10)"
         .Result = ">" & Log.Align("x", "C", 10, " -", "", False) & "<"
         .ResultExpected = ">--- x ----<" ' final width is 12 (10 plus one - fill at the left and one at the right)
         ' =====================================================================
         
-        .TestNumber = "010-6"
+        .TestId = "010-6"
         .Verification = "Align left, margin="""", fill="".:"" (final width is 10)"
         .Result = ">" & Log.Align("xx", "L", 10, ".:", , False) & "<"
         .ResultExpected = ">xx.......:<" ' final width is 12 (10 plus - at least - one fill at the right)
             
         ' =====================================================================
-        .TestNumber = "010-7"
+        .TestId = "010-7"
         .Verification = "Align left, margin="""", fill=""."" (final width is 10"
         .Result = ">" & Log.Align("xxx", "L", 10, ".", " ", False) & "<"
         .ResultExpected = ">xxx.......<" ' final width is 12 (10 plus one . fill at the right)
@@ -462,37 +502,37 @@ Private Sub Test_020_Align_Col_Arranged()
         .TestedType = "Function"
         
         ' =====================================================================
-        .TestNumber = "020-1"
+        .TestId = "020-1"
         .Verification = "Align left, cols arragend, margin= "" "", fill="" "" (final width = 12)"
         .Result = "|" & Log.Align("xx", "L", 10, " ", " ", True) & "|"
         .ResultExpected = "| xx         |"
         
         ' =====================================================================
-        .TestNumber = "020-2"
+        .TestId = "020-2"
         .Verification = "Align right, cols arranged, margin="" "", fill="" "" (final length = 12)"
         .Result = ">" & Log.Align("x", "R", 10, " ", " ", True) & "<"
         .ResultExpected = ">          x <"
         
         ' =====================================================================
-        .TestNumber = "020-3"
+        .TestId = "020-3"
         .Verification = "Align centered, cols arranged, margin="" "", fill=""-"" (final width is 14)"
         .Result = "|" & Log.Align("x", "C", 10, "-", " ", True) & "|"
         .ResultExpected = "| -----x------ |" ' final width is 12 (10 plus one - fill at the left and one at the right)
         
         ' =====================================================================
-        .TestNumber = "020-4"
+        .TestId = "020-4"
         .Verification = "Align centered, cols arranged, margin="" "", fill="" -"" (final width is 14)"
         .Result = "|" & Log.Align("x", "C", 10, " -", " ", True) & "|"
         .ResultExpected = "| ----- x ------ |" ' final width is 12 (10 plus one - fill at the left and one at the right)
         
         ' =====================================================================
-        .TestNumber = "020-5"
+        .TestId = "020-5"
         .Verification = "Align left, cols arranged, fill="".:"", colls arranged (final width is 12)"
         .Result = Log.Align("xx", "L", 10, ".:", " ", True)
         .ResultExpected = " xx.........: " ' final width is 12 (10 plus - at least - one fill at the right)
             
         ' =====================================================================
-        .TestNumber = "020-5"
+        .TestId = "020-5"
         .Verification = "Align left, filled with ""."", considered cols arranged, final width is 11"
         .Result = Log.Align("xxx", "L", 10, ".", " ", True)
         .ResultExpected = " xxx........ " ' final width is 12 (10 plus one . fill at the right)
@@ -526,7 +566,7 @@ Private Sub Test_100_All()
         .TestHeadLine = "All log services"
         
         ' ====================================================
-        .TestNumber = "100-1"
+        .TestId = "100-1"
         .Verification = "1. A log entry with 4 line title, 2. One log entry as new log"
         With Log
             .FileFullName = TestAid.NameTestResultFile
@@ -547,7 +587,7 @@ Private Sub Test_100_All()
         .ResultExpected = .TestResultExpectedFile
         
         ' ====================================================
-        .TestNumber = "100-2"
+        .TestId = "100-2"
         .Verification = "New log file, title centered filled with -, 2 log entires"
         With Log
             .FileFullName = TestAid.NameTestResultFile
@@ -565,7 +605,7 @@ Private Sub Test_100_All()
         .ResultExpected = .TestResultExpectedFile
             
         ' ====================================================
-        .TestNumber = "100-3"
+        .TestId = "100-3"
         .Verification = "Title width adjusted, indicates new log"
         '~~ To continue with result of previous result the
         '~~ result file from the previous test is copied for this test
@@ -582,7 +622,7 @@ Private Sub Test_100_All()
         .ResultExpected = .TestResultExpectedFile
                             
         ' ====================================================
-        .TestNumber = "100-4"
+        .TestId = "100-4"
         .Verification = "New log file, items arranged in columns, no column header"
         With Log
             .FileFullName = TestAid.NameTestResultFile
@@ -597,7 +637,7 @@ Private Sub Test_100_All()
         .ResultExpected = .TestResultExpectedFile
          
         ' ====================================================
-        .TestNumber = "100-5"
+        .TestId = "100-5"
         .Verification = "Items arranged in columns (with header)"
         With Log
             .FileFullName = TestAid.NameTestResultFile
@@ -623,7 +663,7 @@ Private Sub Test_100_All()
         .ResultExpected = .TestResultExpectedFile
          
         ' ====================================================
-        .TestNumber = "100-6"
+        .TestId = "100-6"
         .Verification = "Items arranged in columns (fill "" .:"", no header)"
         With Log
             .FileFullName = TestAid.NameTestResultFile
@@ -639,7 +679,7 @@ Private Sub Test_100_All()
         .ResultExpected = .TestResultExpectedFile
     
         ' ====================================================
-        .TestNumber = "100-7"
+        .TestId = "100-7"
         .Verification = "Items arranged in columns (fill "".:"", cols with empty items)"
         With Log
             .FileFullName = TestAid.NameTestResultFile
