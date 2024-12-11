@@ -33,3 +33,27 @@
 24-11-09 20:32:51 00,0496 00,0496 << End execution trace 
 24-11-09 20:32:51                 Execution trace by 'Common VBA Execution Trace Service (mTrc)' (https://github.com/warbe-maker/VBA-Trace)
 24-11-09 20:32:51                 Impact on the overall performance (caused by the trace itself): 0,2 milliseconds!
+===========================================================================================================================================
+24-12-05 14:29:58 Elapsed Length  Execution trace by 'Common VBA Execution Trace Service (mTrc)' (https://github.com/warbe-maker/VBA-Trace)
+24-12-05 14:29:58 seconds seconds >> Begin execution trace 
+24-12-05 14:29:58 00,0000         |  >> mLogTest.Test_100_All
+===========================================================================================================================================
+24-12-05 14:31:13 Elapsed Length  Execution trace by 'Common VBA Execution Trace Service (mTrc)' (https://github.com/warbe-maker/VBA-Trace)
+24-12-05 14:31:13 seconds seconds >> Begin execution trace 
+24-12-05 14:31:13 00,0000         |  >> mLogTest.Test_100_All
+===========================================================================================================================================
+24-12-05 14:32:02 Elapsed Length  Execution trace by 'Common VBA Execution Trace Service (mTrc)' (https://github.com/warbe-maker/VBA-Trace)
+24-12-05 14:32:02 seconds seconds >> Begin execution trace 
+24-12-05 14:32:02 00,0000         |  >> mLogTest.Test_100_All
+24-12-05 14:43:21 668,7497 668,7497 |  << mLogTest.Test_100_All (Application Error 1 )
+24-12-05 14:43:21 668,7497 668,7497 << End execution trace 
+24-12-05 14:43:21                 Execution trace by 'Common VBA Execution Trace Service (mTrc)' (https://github.com/warbe-maker/VBA-Trace)
+24-12-05 14:43:21                 Impact on the overall performance (caused by the trace itself): 1,3 milliseconds!
+===========================================================================================================================================
+24-12-05 14:45:34 Elapsed Length  Execution trace by 'Common VBA Execution Trace Service (mTrc)' (https://github.com/warbe-maker/VBA-Trace)
+24-12-05 14:45:34 seconds seconds >> Begin execution trace 
+24-12-05 14:45:34 00,0000         |  >> mLogTest.Test_100_All
+24-12-05 14:45:42 01,7069 01,7069 |  << mLogTest.Test_100_All (Application Error 1 )
+24-12-05 14:45:42 01,7069 01,7069 << End execution trace 
+24-12-05 14:45:42                 Execution trace by 'Common VBA Execution Trace Service (mTrc)' (https://github.com/warbe-maker/VBA-Trace)
+24-12-05 14:45:42                 Impact on the overall performance (caused by the trace itself): 1,3 milliseconds!

@@ -1,36 +1,52 @@
-24-11-11-15:24:44 ------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb --------------------
-24-11-11-15:24:44 -------------------------------------------------------------------------------------------------
-24-11-11-15:24:44  Class-Module     clsTestAid.....:  Modified Common Component: Release registered pending        
-24-11-11-15:24:44                   ...............:  Serviced Common Component modified: E x p o r t e d !        
-24-11-11-15:24:44                   ...............:  Serviced Common Component modified: Re-registered pending release 
-24-11-11-15:24:44  UserForm         fTempGuide.....:  Modified VBComponent e x p o r t e d !                            
-24-11-11-16:18:49 =================================================================================================
-24-11-11-16:18:49 ------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb --------------------
-24-11-11-16:18:49 -------------------------------------------------------------------------------------------------
-24-11-11-16:18:49  Standard-Module  mTrc...........:  Modified Common Component: Release registered pending        
-24-11-11-16:18:50                   ...............:  Serviced Common Component modified (code differs from public and LastModAt > LastmodAt public): Registered pending release 
-24-11-11-16:18:50                   ...............:  Serviced Common Component modified: Properties pending set equal serviced                                                  
-24-11-11-16:18:51  Class-Module     clsTestAid.....:  Modified Common Component: Release registered pending                                                                      
-24-11-11-16:18:51                   ...............:  Serviced Common Component modified: E x p o r t e d !                                                                      
-24-11-11-16:18:51                   ...............:  Serviced Common Component modified: Re-registered pending release                                                          
-24-11-11-16:18:52  Standard-Module  mLogTest.......:  Modified VBComponent e x p o r t e d !                                                                                     
-24-11-11-16:18:52  UserForm         fGuide.........:  Modified VBComponent e x p o r t e d !                                                                                     
-24-11-11-16:21:39 =================================================================================================
-24-11-11-16:21:39 ------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb --------------------
-24-11-11-16:21:39 -------------------------------------------------------------------------------------------------
-24-11-11-16:21:39  Standard-Module  mLogTest.......:  Modified VBComponent e x p o r t e d !                       
-24-11-11-16:30:29 =================================================================================================
-24-11-11-16:30:29 ------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb --------------------
-24-11-11-16:30:29 -------------------------------------------------------------------------------------------------
-24-11-11-16:30:29  Class-Module     clsTestAid.....:  Modified Common Component: Release registered pending        
-24-11-11-16:30:29                   ...............:  Serviced Common Component modified: E x p o r t e d !        
-24-11-11-16:30:29                   ...............:  Serviced Common Component modified: Re-registered pending release 
-24-11-11-16:30:30  Standard-Module  mLogTest.......:  Modified VBComponent e x p o r t e d !                            
-24-11-11-16:50:38 =================================================================================================
-24-11-11-16:50:38 ------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb --------------------
-24-11-11-16:50:38 -------------------------------------------------------------------------------------------------
-24-11-11-16:50:38  Class-Module     clsTestAid.....:  Modified Common Component: Release registered pending        
-24-11-11-16:50:38                   ...............:  Serviced Common Component modified: E x p o r t e d !        
-24-11-11-16:50:38                   ...............:  Serviced Common Component modified: Re-registered pending release 
-24-11-11-16:50:39  Standard-Module  mLogTest.......:  Modified VBComponent e x p o r t e d !                            
-24-11-11-16:50:39  UserForm         fGuide.........:  Modified VBComponent e x p o r t e d !                            
+24-12-05-14:07:51 --------------- Update Outdated Common Components (by CompMan.xlsb) for Log.xlsb ----------------
+24-12-05-14:07:51 -------------------------------------------------------------------------------------------------
+24-12-05-14:07:51  Standard-Module  mCompManClient.:  Serviced Common Component used is up-to-date                 
+24-12-05-14:07:58  Class-Module     clsTestAid.....:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-05-14:08:07  Class-Module     clsLog.........:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-05-14:08:11  Standard-Module  mMsg...........:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-05-14:08:14  Standard-Module  mErH...........:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-05-14:08:20  UserForm         fMsg...........:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-05-14:08:23  Standard-Module  mTrc...........:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-05-14:52:08 =================================================================================================
+24-12-05-14:52:08 ------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb --------------------
+24-12-05-14:52:08 -------------------------------------------------------------------------------------------------
+24-12-05-14:52:08  Standard-Module  mLogTest.......:  Modified VBComponent e x p o r t e d !                       
+24-12-05-14:52:08  Class-Module     clsTestAid.....:  Common Component code change:                                
+24-12-05-14:52:08                   ...............:  Line 0476 clsTestAid.............................................:Friend Property Get NameTestFile() As String:               NameTestFile = sNameTestFile:                                       End Property 
+24-12-05-14:52:08                   ...............:  Line 0476 E:\Sync\Excel VBA\DevAndTest\Log\CompMan\source\clsTestAFriend Property Get NameTestFile() As String:               NameTestFile = sNameTestFile:                               End Property         
+24-12-05-14:52:08                   ...............:  Modified Common Component: Release registered pending                                                                                                                                                          
+24-12-05-14:52:08                   ...............:  Serviced Common Component modified: E x p o r t e d !                                                                                                                                                          
+24-12-05-14:52:08                   ...............:  Serviced Common Component modified: Properties in CommComps.dat updated                                                                                                                                        
+24-12-05-14:52:08                   ...............:  Serviced Common Component modified: Registered pending release                                                                                                                                                 
+24-12-09-16:44:09 =================================================================================================
+24-12-09-16:44:09 --------------- Update Outdated Common Components (by CompMan.xlsb) for Log.xlsb ----------------
+24-12-09-16:44:09 -------------------------------------------------------------------------------------------------
+24-12-09-16:44:09  Class-Module     clsLog.........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:44:09  Standard-Module  mMsg...........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:44:09  UserForm         fMsg...........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:44:09  Standard-Module  mTrc...........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:44:42  Standard-Module  mCompManClient.:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-09-16:44:46  Class-Module     clsTestAid.....:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-09-16:44:49  Standard-Module  mErH...........:  Serviced Common Component updated by re-import of the public Export-File from the Common-Components folder. 
+24-12-09-16:45:57 =================================================================================================
+24-12-09-16:45:57 --------------- Update Outdated Common Components (by CompMan.xlsb) for Log.xlsb ----------------
+24-12-09-16:45:57 -------------------------------------------------------------------------------------------------
+24-12-09-16:45:57  Class-Module     clsLog.........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:45:57  Standard-Module  mMsg...........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:45:57  UserForm         fMsg...........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:45:57  Standard-Module  mTrc...........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:45:58  Standard-Module  mCompManClient.:  Serviced Common Component used is up-to-date                 
+24-12-09-16:45:58  Class-Module     clsTestAid.....:  Serviced Common Component used is up-to-date                 
+24-12-09-16:45:58  Standard-Module  mErH...........:  Serviced Common Component used is up-to-date                 
+24-12-09-16:50:26 =================================================================================================
+24-12-09-16:50:26 --------------- Update Outdated Common Components (by CompMan.xlsb) for Log.xlsb ----------------
+24-12-09-16:50:26 -------------------------------------------------------------------------------------------------
+24-12-09-16:50:26  Class-Module     clsTestAid.....:  Serviced Common Component properties housekeeping:           
+24-12-09-16:50:26                   ...............:  Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-09-16:50:27  Class-Module     clsLog.........:  Serviced Common Component used is up-to-date                                      
+24-12-09-16:50:27  Standard-Module  mMsg...........:  Serviced Common Component used is up-to-date                                      
+24-12-09-16:50:27  UserForm         fMsg...........:  Serviced Common Component used is up-to-date                                      
+24-12-09-16:50:27  Standard-Module  mTrc...........:  Serviced Common Component used is up-to-date                                      
+24-12-09-16:50:27  Standard-Module  mCompManClient.:  Serviced Common Component used is up-to-date                                      
+24-12-09-16:50:27  Standard-Module  mErH...........:  Serviced Common Component used is up-to-date                                      
+24-12-09-16:51:05  Class-Module     clsTestAid.....:  Outdated used Commpon Component: Update skipped for now!                          

@@ -300,7 +300,7 @@ Private Sub Prepare()
         Set TestAid = New clsTestAid
     End If
     TestAid.TestedComp = "clsLog"
-    TestAid.TestFileExtention = "log"
+    TestAid.TestFileExtension = "log"
     Set Log = Nothing
     Set Log = New clsLog
 
@@ -392,46 +392,6 @@ eh: Select Case ErrMsg(ErrSrc(PROC))
     End Select
 End Sub
 
-Private Sub Test_001_Guide()
-
-    Dim s1 As String
-    Dim s2 As String
-    Dim i  As Long
-    
-    If Not TestAid Is Nothing Then Set TestAid = Nothing
-    Set TestAid = New clsTestAid
-    
-    With TestAid
-        .TestId = "GuideTest-1"
-        .TestedComp = "clsTestAid"
-        .TestedProc = "Guide, GuideDone"
-        .Verification = "Basic functionality"
-        
-        .Guide "This test guidance message should appear at tthe top left position." & vbLf & _
-               "Move the message to any other porition and continue!"
-        Stop
-        
-        .Guide "This message should appear at the position the first one had been left."
-        Stop
-        
-        s1 = "Lorem ipsum sic transit ... "
-        For i = 1 To 50
-            s2 = s2 & s1
-        Next i
-        .Guide s2
-        Stop
-                
-        .GuideTerminate
-        
-        .Guide "This message should have poped up at the last position it had been displayed." & vbLf & vbLf & s2
-        Stop
-        
-    End With
-    
-    Set TestAid = Nothing
-    
-End Sub
-
 Private Sub Test_010_Align_Normal()
 
     Dim sResult As String
@@ -439,9 +399,9 @@ Private Sub Test_010_Align_Normal()
     
     Prepare
     With TestAid
-        .TestHeadLine = "Alignment straight (not column arranged)"
+        .Title = "Alignment straight (not column arranged)"
         .TestedProc = "Align"
-        .TestedType = "Function"
+        .TestedProcType = "Function"
         
         ' =====================================================================
         .TestId = "010-1"
@@ -497,9 +457,9 @@ Private Sub Test_020_Align_Col_Arranged()
     
     Prepare
     With TestAid
-        .TestHeadLine = "Alignments column arranged"
+        .Title = "Alignments column arranged"
         .TestedProc = "Align"
-        .TestedType = "Function"
+        .TestedProcType = "Function"
         
         ' =====================================================================
         .TestId = "020-1"
@@ -555,6 +515,7 @@ Private Sub Test_100_All()
     Dim bTimeStamp      As Boolean: bTimeStamp = True
     Dim lLines          As Long
     Dim bAsserted       As Boolean
+    Dim sFile           As String
     
     If Not mErH.Regression Then ProvideNewTraceLogFile "Test.trc"
     BoP ErrSrc(PROC)
@@ -563,7 +524,7 @@ Private Sub Test_100_All()
     With TestAid
         .ExcludeFromComparison = "??-??-??-??:??:?? " ' like string excluded from result/result expected string comparison
         .TestedProc = "Title, Entry"
-        .TestHeadLine = "All log services"
+        .Title = "All log services"
         
         ' ====================================================
         .TestId = "100-1"
@@ -603,13 +564,13 @@ Private Sub Test_100_All()
         .Result = .TestResultFile
 '        .DsplyFile .NameTestResultFile
         .ResultExpected = .TestResultExpectedFile
-            
+        sFile = .TestResultFile.Path ' to continue with it in the next test
         ' ====================================================
         .TestId = "100-3"
         .Verification = "Title width adjusted, indicates new log"
         '~~ To continue with result of previous result the
         '~~ result file from the previous test is copied for this test
-        FSo.CopyFile .TestFolder & "\Test-100-2-Result-1.log", TestAid.NameTestResultFile
+        FSo.CopyFile sFile, TestAid.NameTestResultFile
         With Log
             .FileFullName = TestAid.NameTestResultFile
             .Title "C -", "01-3 Title: Regression test case 01-3"
