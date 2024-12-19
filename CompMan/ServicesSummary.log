@@ -1,34 +1,3 @@
-24-11-11-16:30:29 ------------------ Export Changed Components (by CompMan.xlsb) for Log.xlsb -------------------
-24-11-11-16:30:29 -----------------------------------------------------------------------------------------------
-24-11-11-16:30:29  Class-Module     clsTestAid      Modified Common Component: Release registered pending        
-24-11-11-16:30:29                                   Serviced Common Component modified: E x p o r t e d !        
-24-11-11-16:30:29                                   Serviced Common Component modified: Re-registered pending re 
-24-11-11-16:30:30  Standard-Module  mLogTest        Modified VBComponent e x p o r t e d !                       
-24-11-11-16:30:30 ExportChangedComponents (by CompMan.xlsb) for Log.xlsb: 2 of 12 exported (clsTestAid, mLogTest)     See the VBE CompMan menu for 2 Common Components pending release!  (see E:\Sync\Excel VBA\DevAndTest\Log\CompMan\Services.log for log details)
-24-11-11-16:50:38 ===============================================================================================
-24-11-11-16:50:38 ------------------ Export Changed Components (by CompMan.xlsb) for Log.xlsb -------------------
-24-11-11-16:50:38 -----------------------------------------------------------------------------------------------
-24-11-11-16:50:38  Class-Module     clsTestAid      Modified Common Component: Release registered pending        
-24-11-11-16:50:38                                   Serviced Common Component modified: E x p o r t e d !        
-24-11-11-16:50:38                                   Serviced Common Component modified: Re-registered pending re 
-24-11-11-16:50:39  Standard-Module  mLogTest        Modified VBComponent e x p o r t e d !                       
-24-11-11-16:50:39  UserForm         fGuide          Modified VBComponent e x p o r t e d !                       
-24-11-11-16:50:39 ExportChangedComponents (by CompMan.xlsb) for Log.xlsb: 3 of 12 exported (clsTestAid, mLogTest, fGuide)     See the VBE CompMan menu for 2 Common Components pending release!  (see E:\Sync\Excel VBA\DevAndTest\Log\CompMan\Services.log for log details)
-24-11-11-17:49:43 =====================================================================================================================================================
-24-11-11-17:49:43 --------------------------------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb ----------------------------------------------
-24-11-11-17:49:43 -----------------------------------------------------------------------------------------------------------------------------------------------------
-24-11-11-17:49:43 ExportChangedComponents (by CompMan.xlsb) for Log.xlsb: 0 of 12 exported  (see E:\Sync\Excel VBA\DevAndTest\Log\CompMan\Services.log for log details)
-24-12-05-14:07:51 ===============================================================================================
-24-12-05-14:07:51 -------------- Update Outdated Common Components (by CompMan.xlsb) for Log.xlsb ---------------
-24-12-05-14:07:51 -----------------------------------------------------------------------------------------------
-24-12-05-14:07:51  Standard-Module  mCompManClient  Serviced Common Component used is up-to-date                 
-24-12-05-14:07:58  Class-Module     clsTestAid      Serviced Common Component updated by re-import of the public 
-24-12-05-14:08:07  Class-Module     clsLog          Serviced Common Component updated by re-import of the public 
-24-12-05-14:08:11  Standard-Module  mMsg            Serviced Common Component updated by re-import of the public 
-24-12-05-14:08:14  Standard-Module  mErH            Serviced Common Component updated by re-import of the public 
-24-12-05-14:08:20  UserForm         fMsg            Serviced Common Component updated by re-import of the public 
-24-12-05-14:08:23  Standard-Module  mTrc            Serviced Common Component updated by re-import of the public 
-24-12-05-14:52:08 ===============================================================================================
 24-12-05-14:52:08 ------------------ Export Changed Components (by CompMan.xlsb) for Log.xlsb -------------------
 24-12-05-14:52:08 -----------------------------------------------------------------------------------------------
 24-12-05-14:52:08  Standard-Module  mLogTest        Modified VBComponent e x p o r t e d !                       
@@ -77,3 +46,49 @@
 24-12-09-16:50:27  Standard-Module  mCompManClient  Serviced Common Component used is up-to-date                                      
 24-12-09-16:50:27  Standard-Module  mErH            Serviced Common Component used is up-to-date                                      
 24-12-09-16:51:05  Class-Module     clsTestAid      Outdated used Commpon Component: Update skipped for now!                          
+24-12-19-18:18:36 ===========================================================================================================================
+24-12-19-18:18:36  Class-Module     clsTestAid.....:  Code change: Line 0110 Serviced (CodeModule)....: ' W. Rauschenberger, Berlin Dec 2024 
+24-12-19-18:18:36                                     Code change: Line 0110 Serviced (Export-File)...: ' W. Rauschenberger, Berlin Nov 2024 
+24-12-19-18:19:09 =========================================================================================================================
+24-12-19-18:19:09 --------------------------- Update Outdated Common Components (by CompMan.xlsb) for Log.xlsb ----------------------------
+24-12-19-18:19:09 -------------------------------------------------------------------------------------------------------------------------
+24-12-19-18:19:09  Class-Module     clsLog          Code change: Line 0663 Serviced (CodeModule)...:     AlignLeft = s                     
+24-12-19-18:19:09                                   Code change: Line 0663 Public (Export-File)....:     If VBA.Trim$(a_string) = vbNullSt 
+24-12-19-18:19:09  Standard-Module  mMsg            Code change: Line 0138 Serviced (CodeModule)...: Private Declare PtrSafe Function Crea 
+24-12-19-18:19:09                                   Code change: Line 0138 Public (Export-File)....: #If Win64 Or VBA7 Then                
+24-12-19-18:19:09  UserForm         fMsg            Code change: Line 0695 Serviced (CodeModule)...:     mMsg.Dsply dsply_title:="No 'Appl 
+24-12-19-18:19:09                                   Code change: Line 0695 Public (Export-File)....:     mMsg.Dsply d_title:="No 'Applicat 
+24-12-19-18:19:09  Standard-Module  mTrc            Code change: Line 0121 Serviced (CodeModule)...: Private sPath               As String 
+24-12-19-18:19:09                                   Code change: Line 0121 Public (Export-File)....: Private TraceStack          As Collec 
+24-12-19-18:19:09  Standard-Module  mCompManClient  Code change: Line 0007 Serviced (CodeModule)...: ' W. Rauschenberger, Berlin Jul 2024  
+24-12-19-18:19:09                                   Code change: Line 0007 Public (Export-File)....: ' W. Rauschenberger, Berlin Dec 2024  
+24-12-19-18:19:09  Class-Module     clsTestAid      Code change: Line 0106 Serviced (CodeModule)...: ' Note 2: This Common Component is no 
+24-12-19-18:19:09                                   Code change: Line 0106 Public (Export-File)....: ' Note 2: This Common Component is "h 
+24-12-19-18:19:09  Standard-Module  mErH            Code change: Line 0277 Serviced (CodeModule)...:                 MsgBox "When the err_ 
+24-12-19-18:19:09                                   Code change: Line 0277 Public (Export-File)....:                 MsgBox "When the argu 
+24-12-19-18:19:14  Class-Module     clsLog          Serviced Common Component updated by re-import of the public Export-File from the Comm 
+24-12-19-18:19:17  Standard-Module  mMsg            Serviced Common Component updated by re-import of the public Export-File from the Comm 
+24-12-19-18:19:20  UserForm         fMsg            Serviced Common Component updated by re-import of the public Export-File from the Comm 
+24-12-19-18:19:23  Standard-Module  mTrc            Serviced Common Component updated by re-import of the public Export-File from the Comm 
+24-12-19-18:19:25  Standard-Module  mCompManClient  Serviced Common Component updated by re-import of the public Export-File from the Comm 
+24-12-19-18:19:28  Class-Module     clsTestAid      Serviced Common Component updated by re-import of the public Export-File from the Comm 
+24-12-19-18:19:30  Standard-Module  mErH            Serviced Common Component updated by re-import of the public Export-File from the Comm 
+24-12-19-18:26:17 =================================================================================================
+24-12-19-18:26:17  Class-Module     clsLog.........:  Serviced Common Component properties housekeeping:           
+24-12-19-18:26:17                                     Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-19-18:26:17  Class-Module     clsTestAid.....:  Serviced Common Component properties housekeeping:                                
+24-12-19-18:26:17                                     Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-19-18:26:17  UserForm         fMsg...........:  Serviced Common Component properties housekeeping:                                
+24-12-19-18:26:17                                     Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-19-18:26:17  Standard-Module  mCompManClient.:  Serviced Common Component properties housekeeping:                                
+24-12-19-18:26:17                                     Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-19-18:26:17  Standard-Module  mErH...........:  Serviced Common Component properties housekeeping:                                
+24-12-19-18:26:17                                     Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-19-18:26:18  Standard-Module  mMsg...........:  Serviced Common Component properties housekeeping:                                
+24-12-19-18:26:18                                     Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-19-18:26:18  Standard-Module  mTrc...........:  Serviced Common Component properties housekeeping:                                
+24-12-19-18:26:18                                     Serviced Common Component's Export-File meets public: Properties set equal public 
+24-12-19-18:26:19 =====================================================================================================================================================
+24-12-19-18:26:19 --------------------------------------------- Export Changed Components (by CompMan.xlsb) for Log.xlsb ----------------------------------------------
+24-12-19-18:26:19 -----------------------------------------------------------------------------------------------------------------------------------------------------
+24-12-19-18:26:19 ExportChangedComponents (by CompMan.xlsb) for Log.xlsb: 0 of 12 exported  (see E:\Sync\Excel VBA\DevAndTest\Log\CompMan\Services.log for log details)

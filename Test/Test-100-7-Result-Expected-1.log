@@ -5,4 +5,4 @@
 24-10-15-19:09:46    1 xxxxx ..............................................: Rightmost column without width limit! (this first line implicitly indicates the columns width for being considered by the header)
 24-10-15-19:09:46    2 xxx ................................................:   - zzzzzz (note that leading spaces are preserved with left alignment - as rigth are with right alignment)                      
 24-10-15-19:09:46    3 x ..................................................: zzzzzz                                                                                                                           
-24-10-15-19:09:46       ...................................................: Additional comment to the above item                                                                                             
+24-10-15-19:09:46                                                            Additional comment to the above item                                                                                             
